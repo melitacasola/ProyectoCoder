@@ -62,7 +62,7 @@ def cursoFormulario(request):
             
             print(informacion)
             
-            curso = Curso (nombre=informacion['curso'], camada=informacion['camada'])
+            curso = Curso(nombre=informacion['curso'], camada=informacion['camada'])
             
             curso.save()
             
@@ -91,3 +91,24 @@ def profesorFormulario(request):
     else:
         miFormulario= ProfesorFormulario()
     return render(request, "AppCoder/profesorFormulario.html", {"miFormulario": miFormulario})
+
+def busquedaCamada(request):
+    return render(request, "AppCoder/busquedaCamada.html")
+
+
+def buscar(request):
+    
+    if request.GET["camada"]:
+        
+        #respuesta = f"estoy buscando la camada nro: {request.GET['camada']}"
+        camada = request.GET['camada']
+        print(camada)
+        cursos = Curso.objects.filter(camada__icontains=camada)
+        print(cursos)
+        
+        return render(request, "AppCoder/resultadosBusqueda.html", {"curso": cursos, "camada": camada})
+    
+    else:
+        respuesta = "No olvidarse Datos"
+    #return HttpResponse(respuesta)
+    return render(request, "AppCoder/inicio.html", {"respuesta":respuesta})

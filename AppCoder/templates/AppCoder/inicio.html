@@ -2,13 +2,39 @@
 
 {% load static %}
 
-{% block contenidoQuecambia%}
+{% block contenidoQueCambia %}
 
-    <!-- Aqui va lo qe cambia asociado a la vista =) -->
-    <h1>Este es el Titulo del Inicio que cambio</h1>
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Este es el título del Inicio que cambio</h1>
+    <br>
+    <br>
+
+    <h3>Podes buscar una camada:</h3>
     
-    <p>Se hereda desde la plantilla Padre, y las carpetas se llaman Static y Template porque ya sae django qué hacer</p>
+    <form action="/AppCoder/buscar/" method="GET">
 
-    <h3>En el hijo, casi no hay nada.</h3>
+        <input type="number" name="camada" id="camada">
 
-{% endblock %}
+        <input type="submit" value="Buscar">
+    
+    </form>
+    
+    {% if cursos %}
+    
+    <p>Estamos buscando el: {{camada}}</p>
+    
+    <ul>
+        
+        {% for curso in cursos %}
+        
+        <li> {{curso.nombre}} </li>
+        
+        <li> {{curso.camada}} </li>
+        
+        {% endfor %}
+    
+    </ul>
+    
+    {% endif %}
+    
+    {% endblock %}

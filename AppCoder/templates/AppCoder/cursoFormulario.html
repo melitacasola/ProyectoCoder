@@ -4,21 +4,21 @@
 
 {% block contenidoQueCambia %}
 
-{%if miFormulario.errors %}
+    {%if miFormulario.errors %}
 
-<p style="color: blue;"> Estan mal los Datos, revisar</p>
+    <p style="color: blue;"> Estan mal los Datos, revisar</p>
 
-{%endif%}
+    {%endif%}
 
-<form action="" method="POST">{% csrf_token %}
+    <form action="" method="POST">{% csrf_token %}
 
-    <table>
-        {{miFormulario}}
+        <table>
+            {{miFormulario.as_table}}
 
-    </table>
+        </table>
 
-    <input type="submit", value="Enviar">
+        <input type="submit", value="Enviar">
 
-</form>
+    </form>
 
 {% endblock %}
