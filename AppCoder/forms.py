@@ -4,7 +4,7 @@ from django import forms
 class CursoFormulario(forms.Form):
     
     #especificar los campos
-    curso= forms.CharField(max_length=40)
+    curso= forms.CharField()
     camada= forms.IntegerField()
     
 class ProfesorFormulario(forms.Form):
@@ -12,5 +12,4 @@ class ProfesorFormulario(forms.Form):
     apellido= forms.CharField(max_length=30)
     email= forms.EmailField()
     Profesion= forms.CharField(max_length=30)
-    
     

@@ -2,25 +2,35 @@
 
 {% load static %}
 
-{% block contenidoQuecambia %}
+{% block contenidoQueCambia %}
 
-    <!--Aqui va lo que queremos cambiar-->
 
-    <h1> Profesores </h1>
-    <p>Info de los Profes </p>
+    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <h1>Formulario - Agregar Profesor</h1>
+    
+    {% if miFormulario.errors %}
 
-    {% if miformulario.errors %}
-    <p style="color:blueviolet;"> Estan Mal los Datos, REVISAR </p>"
+    <p style="color: red;"> Están mal los datos, revisar</p>
 
     {% endif %}
 
+
     <form action="" method="POST">{% csrf_token %}
+
+        <!-- Acá está la magia de Django-->
+        
         <table>
-            {{miformulario}}
+
+            {{ miFormulario.as_table }}
+
+
         </table>
+
 
         <input type="submit", value="Enviar">
 
     </form>
+
+  
 
 {% endblock %}

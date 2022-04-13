@@ -3,11 +3,12 @@
     <head>
 
         {% load static %}
+
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Landing Page - Start Bootstrap Theme</title>
+        <title>Inicio</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{%static 'AppCoder/assets/favicon.ico' %}" />
         <!-- Bootstrap icons-->
@@ -15,29 +16,22 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="{% static 'AppCoder/css/styles.css' %}" rel="stylesheet" />
+        <link href="{%static 'AppCoder/css/styles.css' %}" rel="stylesheet" />
+
+
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
-                <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+                <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>´
                 <a class="navbar-brand" href="{% url 'Profesores' %}">Profesores</a>
                 <a class="navbar-brand" href="{% url 'Cursos' %}">Cursos</a>
                 <a class="navbar-brand" href="{% url 'Estudiantes' %}">Estudiantes</a>
                 <a class="navbar-brand" href="{% url 'Entregables' %}">Entregables</a>
-                <a class="btn btn-primary" href="#signup">INICIAR</a>
+                <a class="btn btn-primary" href="#NADAAUN">INICIAR</a>
             </div>
         </nav>
-
-        <div class="row">
-            <div class="col">
-                <input class="form-control form-control-lg" id="emailAddress" type="email" placeholder="Busca Producto" data-sb-validations="required,email" />
-                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
-                <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
-            </div>
-            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-        </div>
 
 
         <!-- Masthead-->
@@ -47,7 +41,7 @@
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
-                            <h1 class="mb-5">Nuestra WEB Intermedia de Django - CODERHOUSE</h1>
+                            <h1 class="mb-5">Nuestra web Intermedia de Django - CoderHouse</h1>
                             <!-- Signup form-->
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -56,21 +50,24 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            
+                           
                         </div>
                     </div>
                 </div>
             </div>
         </header>
+       
 
 
-        <!--esto es lo qe va a cambiar --> 
-        {% block contenidoQuecambia %}
+        <!-- Esto es lo que va a cambiar-->
 
-    
+        {% block contenidoQueCambia %}
+
         {% endblock %}
 
 
+        
+     
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">
@@ -80,12 +77,9 @@
                             <li class="list-inline-item"><a href="#!">Ayuda</a></li>
                             <li class="list-inline-item">⋅</li>
                             <li class="list-inline-item"><a href="#!">Contacto</a></li>
-                            <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Trabaja con nosotros</a></li>
-                            
-                            
+                      
                         </ul>
-                        <p class="text-muted small mb-4 mb-lg-0">&copy; Curso de Python. CoderHouse - Your Website 2022. All Rights Reserved.</p>
+                        <p class="text-muted small mb-4 mb-lg-0">&copy; Curso de Python - CoderHouse.</p>
                     </div>
                     <div class="col-lg-6 h-100 text-center text-lg-end my-auto">
                         <ul class="list-inline mb-0">
